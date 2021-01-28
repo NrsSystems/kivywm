@@ -401,6 +401,8 @@ class BaseWindowManager(EventDispatcher):
         app_window.configure(
             width=size['width_in_pixels'], height=size['height_in_pixels'])
 
+        self.display.sync()
+
     def set_cursor(self, name='left_ptr'):
         p = subprocess.Popen(['xsetroot', '-cursor_name', name])
         p.communicate()
